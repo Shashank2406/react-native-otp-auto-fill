@@ -18,7 +18,7 @@ class OtpAutoFillView : UIView, UITextFieldDelegate {
 
     @objc var space: NSNumber = 28.0 {
         didSet {
-            textField.defaultTextAttributes.updateValue(space, forKey: NSAttributedString.Key.kern)
+            textField.defaultTextAttributes.updateValue(space, forKey: NSAttributedString.Key.kern.rawValue)
         }
     }
 
@@ -52,7 +52,7 @@ class OtpAutoFillView : UIView, UITextFieldDelegate {
         textField.delegate = self
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = hexStringToUIColor(hexColor: color)
-        textField.defaultTextAttributes.updateValue(space, forKey: NSAttributedString.Key.kern)
+        textField.defaultTextAttributes.updateValue(space, forKey: NSAttributedString.Key.kern.rawValue)
         textField.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .heavy)
         textField.textContentType = .oneTimeCode
         textField.keyboardType = .numberPad
